@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        jar="C:\Users\fuga\AndroidStudioProjects\android\app\lib\core-3.2.0.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="e019d15a13a9786f881141d2df6654b8510bce8b">
+        <dex dex="C:\Users\fuga\AndroidStudioProjects\android\app\build\intermediates\pre-dexed\debug\core-3.2.0-ad797e79ace6834c4cec0c6f16c4f26b00217ff2.jar" />
+    </item>
+
+</items>
