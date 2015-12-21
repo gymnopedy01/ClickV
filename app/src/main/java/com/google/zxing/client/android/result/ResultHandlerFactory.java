@@ -16,10 +16,13 @@
 
 package com.google.zxing.client.android.result;
 
+import android.util.Log;
+
 import com.google.zxing.Result;
 import com.google.zxing.client.android.CaptureActivity;
 import com.google.zxing.client.result.ParsedResult;
 import com.google.zxing.client.result.ResultParser;
+
 
 /**
  * Manufactures Android-specific handlers based on the barcode content's type.
@@ -40,7 +43,7 @@ public final class ResultHandlerFactory {
       case PRODUCT:
         return new ProductResultHandler(activity, result, rawResult);
       case URI:
-        return new URIResultHandler(activity, result);
+          return  isClickV(activity, rawResult) ? new ClickVURIResultHandler(activity, result) : new URIResultHandler(activity, result);
       case WIFI:
         return new WifiResultHandler(activity, result);
       case GEO:
@@ -61,4 +64,17 @@ public final class ResultHandlerFactory {
   private static ParsedResult parseResult(Result rawResult) {
     return ResultParser.parseResult(rawResult);
   }
+
+    private static boolean isClickV(CaptureActivity activity, Result rawresult) {
+        String text = rawresult.getText();
+
+        Log.d("ClickV", "isClickV text : " + text);
+
+        if ( text !=null && text.indexOf("clickv://") >= 0) {
+            return true;
+        }
+
+        return false;
+
+    }
 }

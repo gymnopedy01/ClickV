@@ -169,7 +169,7 @@ public final class CaptureActivity extends Activity implements SurfaceHolder.Cal
     SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(this);
 
     if (prefs.getBoolean(PreferencesActivity.KEY_DISABLE_AUTO_ORIENTATION, true)) {
-      setRequestedOrientation(getCurrentOrientation());
+      setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
     } else {
       setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_SENSOR_LANDSCAPE);
     }
@@ -442,6 +442,9 @@ public final class CaptureActivity extends Activity implements SurfaceHolder.Cal
       beepManager.playBeepSoundAndVibrate();
       drawResultPoints(barcode, scaleFactor, rawResult);
     }
+
+
+    Log.d("ClickV", "source" + source );
 
     switch (source) {
       case NATIVE_APP_INTENT:
