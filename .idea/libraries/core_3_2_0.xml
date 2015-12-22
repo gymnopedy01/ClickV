@@ -4,6 +4,9 @@
       <root url="jar://$PROJECT_DIR$/app/lib/core-3.2.0.jar!/" />
     </CLASSES>
     <JAVADOC />
-    <SOURCES />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.ideaLibSources/core-3.2.0-sources.jar!/" />
+      <root url="jar://C:/jdk1.7.0_17/src.zip!/" />
+    </SOURCES>
   </library>
 </component>

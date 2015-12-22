@@ -25,4 +25,4 @@
         android:icon="@android:drawable/ic_menu_delete"
         android:orderInCategory="2"
         android:showAsAction="withText|ifRoom"/>
-</menu><!-- From: file:/C:/Users/fuga/AndroidStudioProjects/android/app/src/main/res/menu/history.xml -->
+</menu><!-- From: file:/F:/AndroidStudioProjects/ClickV-C/app/src/main/res/menu/history.xml -->

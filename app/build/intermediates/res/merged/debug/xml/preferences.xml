@@ -133,4 +133,4 @@
         android:title="@string/preferences_disable_barcode_scene_mode_title"/>
   </PreferenceCategory>
 </PreferenceScreen>
-<!-- From: file:/C:/Users/fuga/AndroidStudioProjects/android/app/src/main/res/xml/preferences.xml -->
+<!-- From: file:/F:/AndroidStudioProjects/ClickV-C/app/src/main/res/xml/preferences.xml -->

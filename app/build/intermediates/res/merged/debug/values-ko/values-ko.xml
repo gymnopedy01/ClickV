@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!-- From: file:/C:/Users/fuga/AndroidStudioProjects/android/app/src/main/res/values-ko/strings.xml -->
+    <!-- From: file:/F:/AndroidStudioProjects/ClickV-C/app/src/main/res/values-ko/strings.xml -->
     <eat-comment/>
     <string name="app_name">찰칵V</string>
     <string name="app_picker_name">어플리케이션</string>
@@ -28,6 +28,7 @@
     <string name="button_sms">SMS 보내기</string>
     <string name="button_web_search">인터넷 검색</string>
     <string name="button_wifi">네트워크에 연결</string>
+    <string name="clickv_btn1">찰칵V버튼</string>
     <string name="contents_contact">연락처 정보</string>
     <string name="contents_email">이메일 주소</string>
     <string name="contents_location">GPS 좌표</string>

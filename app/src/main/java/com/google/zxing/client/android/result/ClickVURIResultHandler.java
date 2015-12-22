@@ -17,11 +17,20 @@
 package com.google.zxing.client.android.result;
 
 import android.app.Activity;
+import android.os.AsyncTask;
+import android.util.Log;
 import android.widget.Toast;
 
 import com.google.zxing.client.android.R;
 import com.google.zxing.client.result.ParsedResult;
 import com.google.zxing.client.result.URIParsedResult;
+
+import org.apache.http.HttpEntity;
+import org.apache.http.HttpResponse;
+import org.apache.http.client.HttpClient;
+import org.apache.http.client.methods.HttpGet;
+import org.apache.http.impl.client.DefaultHttpClient;
+import org.apache.http.util.EntityUtils;
 
 import java.util.Locale;
 
@@ -81,9 +90,56 @@ public final class ClickVURIResultHandler extends ResultHandler {
     }
   }
   public void registerClickV(String uri) {
-    Toast.makeText(getActivity(), "인증을 연결합니다.", Toast.LENGTH_SHORT).show();
+    Toast.makeText(getActivity(), "인증을 연결합니다." + uri , Toast.LENGTH_SHORT).show();
+
+    try {
+      new ServerConnenctionTask().execute();
+      Toast.makeText(getActivity(), "호출완료" + uri , Toast.LENGTH_SHORT).show();
+    }catch(Exception e){
+      e.printStackTrace();
+      Toast.makeText(getActivity(), "오류발생." + uri , Toast.LENGTH_SHORT).show();
+    }
+
+
   }
-  @Override
+
+  public class ServerConnenctionTask extends AsyncTask<String, Void, String> {
+
+    @Override
+    protected String doInBackground(String... strings) {
+
+      HttpClient client = new DefaultHttpClient();
+      HttpGet request = new HttpGet("http://172.20.49.48:8080/clickvweb/register.json?userId=fuga@ncsoft.com&telId=112233");
+
+      HttpResponse response = null;
+
+      String s = null;
+      try {
+        response = client.execute(request);
+        HttpEntity entity = response.getEntity();
+        s = EntityUtils.toString(entity);
+      } catch (Exception e){
+        e.printStackTrace();
+      }
+
+      Log.d("ClickV", "s : " + s);
+//      Toast.makeText(getActivity(), "인증호출되었습니다.." + s , Toast.LENGTH_SHORT).show();
+
+      return s;
+
+    }
+
+    @Override
+    protected void onPostExecute(String s) {
+
+      super.onPostExecute(s);
+      Toast.makeText(getActivity(), "인증호출되었습니다.." + s , Toast.LENGTH_SHORT).show();
+
+    }
+  }
+
+
+    @Override
   public int getDisplayTitle() {
     return R.string.result_uri;
   }

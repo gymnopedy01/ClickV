@@ -2,11 +2,25 @@
 <items version="2" >
 
     <item
-        jar="C:\Users\fuga\AndroidStudioProjects\android\app\lib\core-3.2.0.jar"
+        jar="F:\AndroidStudioProjects\ClickV-C\app\lib\httpclient-4.2.6.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="e4ca30a6a3a075053a61c6fc850d2432dc012ba7">
+        <dex dex="F:\AndroidStudioProjects\ClickV-C\app\build\intermediates\pre-dexed\debug\httpclient-4.2.6-d7e72efc9c712c594a8a7f6f96877178402026bb.jar" />
+    </item>
+    <item
+        jar="F:\AndroidStudioProjects\ClickV-C\app\lib\core-3.2.0.jar"
         jumboMode="false"
         revision="23.0.1"
         sha1="e019d15a13a9786f881141d2df6654b8510bce8b">
-        <dex dex="C:\Users\fuga\AndroidStudioProjects\android\app\build\intermediates\pre-dexed\debug\core-3.2.0-ad797e79ace6834c4cec0c6f16c4f26b00217ff2.jar" />
+        <dex dex="F:\AndroidStudioProjects\ClickV-C\app\build\intermediates\pre-dexed\debug\core-3.2.0-6afaa049dc73720cbf44e77b7d391a5bd5f449ef.jar" />
+    </item>
+    <item
+        jar="F:\AndroidStudioProjects\ClickV-C\app\lib\core-3.2.0.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="e019d15a13a9786f881141d2df6654b8510bce8b">
+        <dex dex="F:\AndroidStudioProjects\ClickV-C\app\build\intermediates\pre-dexed\debug\core-3.2.0-6afaa049dc73720cbf44e77b7d391a5bd5f449ef.jar" />
     </item>
 
 </items>

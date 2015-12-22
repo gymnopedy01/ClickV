@@ -1,7 +1,7 @@
 apply plugin: 'com.android.application'
 android {
     compileSdkVersion 21
-    buildToolsVersion "23.0.1"
+    buildToolsVersion '21.1.2'
 
     defaultConfig {
         applicationId "com.google.zxing.client.android"
@@ -19,4 +19,5 @@ android {
 
 dependencies {
     compile files('lib/core-3.2.0.jar')
+    compile files('lib/httpclient-4.2.6.jar')
 }

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:ns1="http://schemas.android.com/tools">
-    <!-- From: file:/C:/Users/fuga/AndroidStudioProjects/android/app/src/main/res/values/arrays.xml -->
+    <!-- From: file:/F:/AndroidStudioProjects/ClickV-C/app/src/main/res/values/arrays.xml -->
     <eat-comment/>
     <string-array name="country_codes" ns1:ignore="MissingTranslation">
     <item>-</item>
@@ -46,7 +46,7 @@
     <item>AUTO</item>
     <item>OFF</item>
   </string-array>
-    <!-- From: file:/C:/Users/fuga/AndroidStudioProjects/android/app/src/main/res/values/colors.xml -->
+    <!-- From: file:/F:/AndroidStudioProjects/ClickV-C/app/src/main/res/values/colors.xml -->
     <eat-comment/>
     <color name="contents_text">#ff000000</color>
     <color name="encode_view">#ffffffff</color>
@@ -59,11 +59,11 @@
     <color name="transparent">#00000000</color>
     <color name="viewfinder_laser">#ffcc0000</color>
     <color name="viewfinder_mask">#60000000</color>
-    <!-- From: file:/C:/Users/fuga/AndroidStudioProjects/android/app/src/main/res/values/dimens.xml -->
+    <!-- From: file:/F:/AndroidStudioProjects/ClickV-C/app/src/main/res/values/dimens.xml -->
     <eat-comment/>
     <dimen name="half_padding">4dip</dimen>
     <dimen name="standard_padding">8dip</dimen>
-    <!-- From: file:/C:/Users/fuga/AndroidStudioProjects/android/app/src/main/res/values/ids.xml -->
+    <!-- From: file:/F:/AndroidStudioProjects/ClickV-C/app/src/main/res/values/ids.xml -->
     <eat-comment/>
     <item name="decode" type="id"/>
     <item name="decode_failed" type="id"/>
@@ -72,7 +72,7 @@
     <item name="quit" type="id"/>
     <item name="restart_preview" type="id"/>
     <item name="return_scan_result" type="id"/>
-    <!-- From: file:/C:/Users/fuga/AndroidStudioProjects/android/app/src/main/res/values/strings.xml -->
+    <!-- From: file:/F:/AndroidStudioProjects/ClickV-C/app/src/main/res/values/strings.xml -->
     <eat-comment/>
     <string name="app_name">Barcode Scanner</string>
     <string name="app_picker_name">Applications</string>
@@ -100,6 +100,7 @@
     <string name="button_sms">Send SMS</string>
     <string name="button_web_search">Web search</string>
     <string name="button_wifi">Connect to Network</string>
+    <string name="clickv_btn1">clickv_btn1</string>
     <string name="contents_contact">Contact info</string>
     <string name="contents_email">Email address</string>
     <string name="contents_location">Geographic coordinates</string>
@@ -199,7 +200,7 @@
     <string name="result_wifi">Found WLAN Configuration</string>
     <string name="sbc_name">Google Book Search</string>
     <string name="wifi_changing_network">Requesting connection to network\u2026</string>
-    <!-- From: file:/C:/Users/fuga/AndroidStudioProjects/android/app/src/main/res/values/themes.xml -->
+    <!-- From: file:/F:/AndroidStudioProjects/ClickV-C/app/src/main/res/values/themes.xml -->
     <eat-comment/>
     <style name="CaptureTheme" parent="android:Theme.Holo">
     <item name="android:windowFullscreen">true</item>
@@ -207,7 +208,7 @@
     <item name="android:windowActionBarOverlay">true</item>
     <item name="android:windowActionModeOverlay">true</item>
   </style>
-    <!-- From: file:/C:/Users/fuga/AndroidStudioProjects/android/app/src/main/res/values/styles.xml -->
+    <!-- From: file:/F:/AndroidStudioProjects/ClickV-C/app/src/main/res/values/styles.xml -->
     <eat-comment/>
     <style name="ResultButton" parent="@android:style/Widget.Holo.Button.Borderless.Small">
     <item name="android:layout_width">0dip</item>

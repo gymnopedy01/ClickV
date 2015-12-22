@@ -130,6 +130,7 @@ public final class R {
         public static final int button_sms=0x7f060017;
         public static final int button_web_search=0x7f060018;
         public static final int button_wifi=0x7f060019;
+        public static final int clickv_btn1=0x7f06007d;
         public static final int contents_contact=0x7f06001a;
         public static final int contents_email=0x7f06001b;
         public static final int contents_location=0x7f06001c;

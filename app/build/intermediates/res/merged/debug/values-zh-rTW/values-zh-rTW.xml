@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!-- From: file:/C:/Users/fuga/AndroidStudioProjects/android/app/src/main/res/values-zh-rTW/strings.xml -->
+    <!-- From: file:/F:/AndroidStudioProjects/ClickV-C/app/src/main/res/values-zh-rTW/strings.xml -->
     <eat-comment/>
     <string name="app_name">條碼掃描器</string>
     <string name="app_picker_name">應用程式</string>
