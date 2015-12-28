@@ -17,7 +17,9 @@
 package com.google.zxing.client.android.result;
 
 import android.app.Activity;
+import android.net.wifi.WifiManager;
 import android.os.AsyncTask;
+import android.telephony.TelephonyManager;
 import android.util.Log;
 import android.widget.Toast;
 
@@ -31,7 +33,11 @@ import org.apache.http.client.HttpClient;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.impl.client.DefaultHttpClient;
 import org.apache.http.util.EntityUtils;
+import org.codehaus.jackson.map.ObjectMapper;
 
+import java.io.IOException;
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.util.Locale;
 
 /**
@@ -43,7 +49,8 @@ public final class ClickVURIResultHandler extends ResultHandler {
   // URIs beginning with entries in this array will not be saved to history or copied to the
   // clipboard for security.
   private static final String[] SECURE_PROTOCOLS = {
-    "otpauth:"
+    "otpauth:",
+    "clickv:"
   };
 
   private static final int[] buttons = {
@@ -90,17 +97,42 @@ public final class ClickVURIResultHandler extends ResultHandler {
     }
   }
   public void registerClickV(String uri) {
-    Toast.makeText(getActivity(), "인증을 연결합니다." + uri , Toast.LENGTH_SHORT).show();
+
+    String host = "http://lit-taiga-5566.herokuapp.com/";
+    String query = null, path = null;
+    String telId = getTelNumber() == null ? getMacAddress() : getTelNumber();
 
     try {
-      new ServerConnenctionTask().execute();
+      URL url = new URL(uri.replaceAll("clickv://", host));
+      query = url.getQuery();
+      path = url.getProtocol() + "://"+ url.getHost() + "/" + url.getPath();
+    } catch (MalformedURLException e) {
+      e.printStackTrace();
+    }
+
+    Toast.makeText(getActivity(), "인증을 연결합니다 :: " + query , Toast.LENGTH_SHORT).show();
+
+    try {
+
+      new ServerConnenctionTask().execute(path, query, telId);
+
       Toast.makeText(getActivity(), "호출완료" + uri , Toast.LENGTH_SHORT).show();
+
     }catch(Exception e){
       e.printStackTrace();
       Toast.makeText(getActivity(), "오류발생." + uri , Toast.LENGTH_SHORT).show();
     }
 
+  }
 
+  public String getTelNumber() {
+    TelephonyManager telephonyManager = (TelephonyManager) getActivity().getSystemService(getActivity().TELEPHONY_SERVICE);
+    return telephonyManager.getLine1Number();
+  }
+
+  public String getMacAddress() {
+    WifiManager wifiManager = (WifiManager) getActivity().getSystemService(getActivity().WIFI_SERVICE);
+    return wifiManager.getConnectionInfo().getMacAddress();
   }
 
   public class ServerConnenctionTask extends AsyncTask<String, Void, String> {
@@ -108,8 +140,15 @@ public final class ClickVURIResultHandler extends ResultHandler {
     @Override
     protected String doInBackground(String... strings) {
 
+      for (String ss : strings) {
+        Log.d("ClickV", "strings : " + ss);
+      }
+
+      String command = strings[0];
+      String query = strings[1] + "&telId=" + strings[2];
+
       HttpClient client = new DefaultHttpClient();
-      HttpGet request = new HttpGet("http://172.20.49.48:8080/clickvweb/register.json?userId=fuga@ncsoft.com&telId=112233");
+      HttpGet request = new HttpGet(command + "?" + query);
 
       HttpResponse response = null;
 
@@ -123,17 +162,27 @@ public final class ClickVURIResultHandler extends ResultHandler {
       }
 
       Log.d("ClickV", "s : " + s);
-//      Toast.makeText(getActivity(), "인증호출되었습니다.." + s , Toast.LENGTH_SHORT).show();
 
-      return s;
+      ObjectMapper jacksonMapper = new ObjectMapper();
+      Result r = null;
+      try {
+        r = (Result) jacksonMapper.readValue(s,Result.class);
+        Log.d("ClickV", "message : " + r.getMessage());
 
-    }
+      } catch (IOException e) {
+        e.printStackTrace();
+      }
+
+    return r.getMessage();
+
+  }
 
     @Override
     protected void onPostExecute(String s) {
 
       super.onPostExecute(s);
-      Toast.makeText(getActivity(), "인증호출되었습니다.." + s , Toast.LENGTH_SHORT).show();
+
+      Toast.makeText(getActivity(), s , Toast.LENGTH_SHORT).show();
 
     }
   }

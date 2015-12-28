@@ -2,6 +2,20 @@
 <items version="2" >
 
     <item
+        jar="F:\AndroidStudioProjects\ClickV-C\app\lib\jackson-core-asl-1.9.10.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="45ff5b12fba27586a2885d420a712c2ffa41c548">
+        <dex dex="F:\AndroidStudioProjects\ClickV-C\app\build\intermediates\pre-dexed\debug\jackson-core-asl-1.9.10-63fd2c8b718d4e9484ee1b2346de478e09141517.jar" />
+    </item>
+    <item
+        jar="F:\AndroidStudioProjects\ClickV-C\app\lib\core-3.2.0.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="e019d15a13a9786f881141d2df6654b8510bce8b">
+        <dex dex="F:\AndroidStudioProjects\ClickV-C\app\build\intermediates\pre-dexed\debug\core-3.2.0-6afaa049dc73720cbf44e77b7d391a5bd5f449ef.jar" />
+    </item>
+    <item
         jar="F:\AndroidStudioProjects\ClickV-C\app\lib\httpclient-4.2.6.jar"
         jumboMode="false"
         revision="21.1.2"
@@ -9,16 +23,16 @@
         <dex dex="F:\AndroidStudioProjects\ClickV-C\app\build\intermediates\pre-dexed\debug\httpclient-4.2.6-d7e72efc9c712c594a8a7f6f96877178402026bb.jar" />
     </item>
     <item
-        jar="F:\AndroidStudioProjects\ClickV-C\app\lib\core-3.2.0.jar"
+        jar="F:\AndroidStudioProjects\ClickV-C\app\lib\jackson-mapper-asl-1.9.10.jar"
         jumboMode="false"
-        revision="23.0.1"
-        sha1="e019d15a13a9786f881141d2df6654b8510bce8b">
-        <dex dex="F:\AndroidStudioProjects\ClickV-C\app\build\intermediates\pre-dexed\debug\core-3.2.0-6afaa049dc73720cbf44e77b7d391a5bd5f449ef.jar" />
+        revision="21.1.2"
+        sha1="deb47197f1adc0cebe9bfc5548e900100c771396">
+        <dex dex="F:\AndroidStudioProjects\ClickV-C\app\build\intermediates\pre-dexed\debug\jackson-mapper-asl-1.9.10-9c8e93564763a0bad93450355d97a5f8b618bbbf.jar" />
     </item>
     <item
         jar="F:\AndroidStudioProjects\ClickV-C\app\lib\core-3.2.0.jar"
         jumboMode="false"
-        revision="21.1.2"
+        revision="23.0.1"
         sha1="e019d15a13a9786f881141d2df6654b8510bce8b">
         <dex dex="F:\AndroidStudioProjects\ClickV-C\app\build\intermediates\pre-dexed\debug\core-3.2.0-6afaa049dc73720cbf44e77b7d391a5bd5f449ef.jar" />
     </item>

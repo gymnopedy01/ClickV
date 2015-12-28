@@ -15,9 +15,20 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.txt'
         }
     }
+
+    packagingOptions {
+        exclude 'META-INF/NOTICE'
+        exclude 'META-INF/LICENSE'
+        exclude 'META-INF/ASL2.0'
+    }
+
 }
 
 dependencies {
+
+    compile files('lib/jackson-core-asl-1.9.10.jar')
+    compile files('lib/jackson-mapper-asl-1.9.10.jar')
+
     compile files('lib/core-3.2.0.jar')
     compile files('lib/httpclient-4.2.6.jar')
 }
